@@ -5062,6 +5062,8 @@ class na extends We {
 
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
+        super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
+        super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
     }
 
     onResize() {
