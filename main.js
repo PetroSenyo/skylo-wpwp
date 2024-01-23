@@ -5078,9 +5078,14 @@ class na extends We {
 
         if ((e.id !== "GLOBE-STEP-1" || e.id !== "GLOBE-STEP-2") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-1") {
             if (!e.inView) return;
-            const t = I(e.progress, 0, 1, 1, 3);
             console.log(3);
-            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
+            T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02);
+            const t = I(e.progress, 0, 1, 3, 1);
+            T.gl.globe.scale.set(t, t, t), T.gl.simCard.scale.set(t, t, t);
+            const {SIM_POS_GLOBE_1: i, SIM_POS_GLOBE_2: s, SIM_ROT_GLOBE_1: o, SIM_ROT_GLOBE_2: a} = D;
+            T.gl.simCard.position.lerpVectors(i, s, e.progress), this.rotationVector.lerpVectors(o, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), T.gl.setOpacity(I(e.progress, .25, 1, 0, 1)), T.gl.satellite.setOpacity(I(e.progress, .25, 1, 0, 1)), this.el.style.opacity = fe(I(e.progress, .5, 1, 0, 1), 0, 1), W(this.el, I(e.progress, 0, 1, 300, 0));
+            const l = fe(I(e.progress, .5, .75, 255, 0), 0, 255);
+            T.nav.el.style.color = `rgb(${l},${l},${l})`, T.nav.bg.style.opacity = I(e.progress, .5, 1, 0, 1), W(T.nav.el, I(e.progress, .5, 1, 0, -1.5, !0), "rem"), W(T.nav.menuOverlay, I(e.progress, .5, 1, 0, 1.5, !0), "rem")
         }
 
         if (e.id === "GLOBE-STEP-2") {
