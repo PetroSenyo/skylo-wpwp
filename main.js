@@ -5020,6 +5020,41 @@ class Vi extends ft {
     }
 }
 
+class We extends Vi {
+    init() {
+        super.init(), this.sectionViewed = !1, this.lastViewed = !1, this.inView = this.inView.bind(this), this.animateIn = this.animateIn.bind(this), this.animateOut = this.animateOut.bind(this), this.el.style.pointerEvents = "none", this.activeObserver = !1
+    }
+
+    observe() {
+        !this.sectionEl || (this.observer = new IntersectionObserver(this.inView, {
+            threshold: .15,
+            rootMargin: "0% 0% 0% 0%"
+        }), this.observer.observe(this.sectionEl))
+    }
+
+    unobserve() {
+        !this.sectionEl || this.observer.unobserve(this.sectionEl)
+    }
+
+    animateIn() {
+        this.el.style.pointerEvents = "auto"
+    }
+
+    animateOut() {
+        this.el.style.pointerEvents = "none"
+    }
+
+    inView(e) {
+        e.forEach(t => {
+            const {isIntersecting: i, target: s} = t;
+            if (i) this.isIntersecting = !0, s === this.sectionEl && (this.animateIn(), this.sectionViewed = !0); else {
+                if (!this.sectionViewed) return;
+                s === this.sectionEl && this.animateOut()
+            }
+        })
+    }
+}
+
 
 
 class ra extends Vi {
@@ -5227,7 +5262,7 @@ class ha extends ft {
             socials: !0,
             images: !0,
             in: {fromBottom: !0}
-        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),  this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
     }
 
     addComponents(e, t, i = this.el, s = !1) {
