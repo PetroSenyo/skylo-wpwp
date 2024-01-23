@@ -5075,7 +5075,6 @@ class na extends We {
             console.log(1);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
-        console.log(3);
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
@@ -5126,11 +5125,11 @@ class oa extends We {
     }
 
     onScroll(e) {
-        console.log(5);
         if (!!T.gl) {
             console.log(4);
             if ((e.id !== "GLOBE-STEP-2" || e.id !== "GLOBE-STEP-3") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2") {
                 if (!e.inView) return;
+                console.log(6);
                 T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02);
                 const t = I(e.progress, 0, 1, 3, 1);
                 T.gl.globe.scale.set(t, t, t), T.gl.simCard.scale.set(t, t, t);
