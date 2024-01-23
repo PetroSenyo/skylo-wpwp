@@ -5063,6 +5063,11 @@ class na extends We {
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
         console.log(2323);
+        window.scrollTo({
+            top: 3000,
+            behavior: 'smooth'
+        });
+
     }
 
     onResize() {
@@ -5127,7 +5132,6 @@ class oa extends We {
 
     onScroll(e) {
         if (!!T.gl) {
-            console.log(4);
             if ((e.id !== "GLOBE-STEP-2" || e.id !== "GLOBE-STEP-3") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2") {
                 if (!e.inView) return;
                 console.log(6);
