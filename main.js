@@ -5055,6 +5055,28 @@ class We extends Vi {
     }
 }
 
+class na extends We {
+    init() {
+        super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".section-globe"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-1"), this.observe()
+    }
+
+    addEvents() {
+        super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
+    }
+
+    onResize() {
+        super.onResize()
+    }
+
+    onScroll(e) {
+        if (!!T.gl && ((e.id !== "GLOBE-STEP-1" || e.id !== "GLOBE-STEP-2") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-2")) {
+            if (!e.inView) return;
+            const t = I(e.progress, 0, 1, 1, 3);
+            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
+        }
+    }
+}
+
 class ra extends Vi {
     init() {
         super.init(), this.onScrollResize = this.onScrollResize.bind(this), this.onRaf = this.onRaf.bind(this), this.onGlLoaded = this.onGlLoaded.bind(this), this.ready = !1, this.passedTop = !1
@@ -5260,7 +5282,7 @@ class ha extends ft {
             socials: !0,
             images: !0,
             in: {fromBottom: !0}
-        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"), this.addComponents(".globe-step-1", na), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
     }
 
     addComponents(e, t, i = this.el, s = !1) {
