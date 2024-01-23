@@ -5227,7 +5227,7 @@ class ha extends ft {
             socials: !0,
             images: !0,
             in: {fromBottom: !0}
-        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"), this.addComponents(".truckscene", ia), this.addComponents(".globe-step-1", na), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
     }
 
     addComponents(e, t, i = this.el, s = !1) {
