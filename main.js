@@ -5075,7 +5075,8 @@ class na extends We {
             console.log(1);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
-        if (e.id === "GLOBE-STEP-1") {
+
+        if ((e.id !== "GLOBE-STEP-1" || e.id !== "GLOBE-STEP-2") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-1") {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
             console.log(3);
