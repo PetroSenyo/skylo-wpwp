@@ -5072,11 +5072,14 @@ class na extends We {
         if (!!T.gl && ((e.id !== "GLOBE-STEP-1" || e.id !== "GLOBE-STEP-2") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-2")) {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
+            console.log(1);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
-            this.bg.sequence.position = I(e.progress, 0, 1, 6, 8), this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
+            const t = I(e.progress, 0, 1, 1, 3);
+            console.log(2);
+            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
     }
 }
