@@ -5082,8 +5082,7 @@ class na extends We {
 
             if (scrollPercentage >= 75) {
                 console.log(111111);
-                // Assuming T.scroll.to("GLOBE-STEP-2") navigates to the desired slide
-                T.scroll.to("GLOBE-STEP-2");
+
             }
         });
 
