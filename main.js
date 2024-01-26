@@ -5081,25 +5081,23 @@ class na extends We {
             const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
             if (scrollPercentage >= 75) {
-                console.log(1111111111111);
-                function simulateWheel(canvasElement, deltaX, deltaY) {
-                    const wheelEvent = new WheelEvent('wheel', {
-                        deltaX: deltaX,
-                        deltaY: deltaY,
-                        bubbles: true,
-                        cancelable: true
-                    });
-
-                    canvasElement.dispatchEvent(wheelEvent);
+                console.log(11111111111111);
+                const sectionGlobe = document.querySelector('.section-globe');
+                if (sectionGlobe) {
+                    sectionGlobe.style.transform = 'translate3d(0px, -300px, 0px)';
+                    sectionGlobe.style.opacity = '0';
                 }
 
-// Використовуйте цю функцію для імітації прокрутки
-                const canvasElement = document.querySelector('canvas'); // Замініть селектор на відповідний, якщо ваш canvas має унікальний клас або id
-                simulateWheel(canvasElement, 0, 1200); // Емулюємо прокрутку на 1200 пікселів вниз
-
-
+                // Змінюємо стилі для .globe-text-2
+                const globeText2 = document.querySelector('.globe-text-2');
+                if (globeText2) {
+                    globeText2.style.pointerEvents = 'auto';
+                    globeText2.style.opacity = '1';
+                    globeText2.style.transform = 'translate3d(0px, 0px, 0px)';
+                }
             }
         });
+
 
 
 
