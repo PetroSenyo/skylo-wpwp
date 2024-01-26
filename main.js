@@ -5083,9 +5083,13 @@ class na extends We {
             if (scrollPercentage >= 75) {
                 console.log(11111111111111);
                 const scrollElement = document.querySelector('div[data-scroll][data-scroll-snap]');
-                if (scrollElement) {
-                    scrollElement.scrollTop += 3500;
-                }
+                const html = document.documentElement;
+                const body = document.body;
+
+                html.scrollTop += 3500;
+                body.scrollTop += 3500;
+                scrollElement.scrollTop += 3500;
+
             }
         });
 
