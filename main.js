@@ -5375,19 +5375,18 @@ class T {
 }
 
 T.init();
-document.addEventListener('DOMContentLoaded', function() {
-    const bannerPage = document.querySelector('.banner-page');
 
-    if (bannerPage) {
-        bannerPage.addEventListener('scroll', function() {
-            let scrollHeight = bannerPage.scrollHeight;
-            let scrollTop = bannerPage.scrollTop;
-            let clientHeight = bannerPage.clientHeight;
-            let scrolledPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+document.addEventListener('DOMContentLoaded', () => {
+  const bannerPage = document.querySelector('.banner-page');
+  const thresholdPercentage = 75;
 
-            if (scrolledPercentage > 75) {
-                console.log(21);
-            }
-        });
+  bannerPage.addEventListener('scroll', () => {
+    const scrollPosition = bannerPage.scrollTop;
+    const totalContentHeight = bannerPage.scrollHeight - bannerPage.clientHeight;
+
+    if ((scrollPosition / totalContentHeight) * 100 > thresholdPercentage) {
+     console.log(211212211221);
     }
+  });
 });
+
