@@ -5376,20 +5376,18 @@ class T {
 
 T.init();
 
-// Додаємо обробник подій на скролл для елемента з класом .banner-page
 document.querySelector('.banner-page').addEventListener('scroll', function() {
-    // Отримуємо висоту елемента .banner-page
-    const bannerHeight = this.scrollHeight; // віднімаємо padding-bottom
+    // Висота зовнішнього контейнера
+    const bannerHeight = this.clientHeight;
 
-    // Отримуємо поточну позицію скролу
-    const scrollPosition = this.scrollTop;
+    // Висота внутрішнього контенту
+    const contentHeight = document.querySelector('#container-paralax').clientHeight;
 
-    // Обчислюємо відсоток скролу
-    const scrollPercentage = (scrollPosition / bannerHeight) * 100;
+    // Визначаємо скільки відсотків проскролено
+    const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
-    // Перевіряємо, чи скрол був на 75% або більше
+    // Якщо проскролено 75% або більше, виводимо повідомлення
     if (scrollPercentage >= 75) {
-        // Виводимо повідомлення в консоль
         console.log('Доскролено на 75%!');
     }
 });
