@@ -5379,7 +5379,7 @@ T.init();
 // Додаємо обробник подій на скролл для елемента з класом .banner-page
 document.querySelector('.banner-page').addEventListener('scroll', function() {
     // Отримуємо висоту елемента .banner-page
-    const bannerHeight = this.scrollHeight - 500; // віднімаємо padding-bottom
+    const bannerHeight = this.scrollHeight; // віднімаємо padding-bottom
 
     // Отримуємо поточну позицію скролу
     const scrollPosition = this.scrollTop;
