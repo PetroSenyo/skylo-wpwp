@@ -5075,20 +5075,6 @@ class na extends We {
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
-        document.querySelector('.banner-page').addEventListener('scroll', function() {
-            const bannerHeight = this.clientHeight;
-            const contentHeight = document.querySelector('#container-paralax').clientHeight;
-            const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
-
-            if (scrollPercentage >= 75) {
-                console.log(11111);
-                const globeStep2Section = document.getElementById('GLOBE-STEP-2');
-                if (globeStep2Section) {
-                    globeStep2Section.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-
 
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
@@ -5097,6 +5083,19 @@ class na extends We {
         }
     }
 }
+document.querySelector('.banner-page').addEventListener('scroll', function() {
+    const bannerHeight = this.clientHeight;
+    const contentHeight = document.querySelector('#container-paralax').clientHeight;
+    const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
+
+    if (scrollPercentage >= 75) {
+        console.log(11111);
+        const globeStep2Section = document.getElementById('GLOBE-STEP-2');
+        if (globeStep2Section) {
+            globeStep2Section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
 class ra extends Vi {
     init() {
         super.init(), this.onScrollResize = this.onScrollResize.bind(this), this.onRaf = this.onRaf.bind(this), this.onGlLoaded = this.onGlLoaded.bind(this), this.ready = !1, this.passedTop = !1
