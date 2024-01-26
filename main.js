@@ -5081,7 +5081,14 @@ class na extends We {
             const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
             if (scrollPercentage >= 75) {
-                window.scrollBy(0, 1200);
+                console.log(1111111111111);
+
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                window.scrollTo({
+                    top: currentScroll + 1200,
+                    behavior: 'smooth' // Додаємо плавну прокрутку
+                });
             }
         });
 
