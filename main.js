@@ -5090,7 +5090,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     const bannerHeight = this.clientHeight;
     const contentHeight = document.querySelector('#container-paralax').clientHeight;
     const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
-    if (scrollPercentage >= 95) {
+    if (scrollPercentage >= 80) {
 
     } else {
         isEventDispatched = false;
@@ -5102,7 +5102,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
 
 
 
-    if (scrollPercentage >= 95) {
+    if (scrollPercentage >= 80) {
         const keydownEvent = new KeyboardEvent('keydown', {
             key: 'ArrowDown',
             code: 'ArrowDown',
@@ -5110,7 +5110,6 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
             cancelable: true
         });
 
-        document.dispatchEvent(keydownEvent);
         document.dispatchEvent(keydownEvent);
 
         // Відзначаємо, що подія була відправлена, і вимикаємо подальше виконання
