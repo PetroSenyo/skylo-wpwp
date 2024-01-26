@@ -5089,38 +5089,20 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
     if (scrollPercentage >= 75) {
-        // // Елемент, на якому буде відбуватися свайп
-        // console.log(1);
-        //
-        // const swipeElement = document.querySelector('html');
-        //
-        // // Створюємо Hammer instance на цьому елементі
-        // const hammer = new Hammer(swipeElement);
-        //
-        // // Створюємо подію свайпу
-        // const swipeEvent = new Hammer.Swipe();
-        //
-        // // Відправляємо цю подію до елемента
-        // hammer.emit('swipe', swipeEvent);
-    }
-});
-
-
-document.querySelector('div').addEventListener('scroll', function() {
-    const scrolled = window.scrollY; // Отримуємо поточну позицію скролу
-    console.log('Прокручено пікселів:', scrolled);
-
-    if (scrolled >= 500) {
-        // Якщо прокручено 500 пікселів, прокручуємо на 2500 пікселів вниз
-        window.scrollTo({
-            top: 2500,
-            behavior: 'smooth' // Додаємо плавну прокрутку
+        // Створюємо подію keydown для стрілочки вниз
+        const keydownEvent = new KeyboardEvent('keydown', {
+            key: 'ArrowDown',
+            code: 'ArrowDown',
+            bubbles: true,
+            cancelable: true
         });
 
-        // Відключаємо подальше автоматичне прокручування після першого виконання
-        window.removeEventListener('scroll', this);
+        // Відправляємо подію
+        document.dispatchEvent(keydownEvent);
     }
 });
+
+
 
 
 class ra extends Vi {
