@@ -5089,9 +5089,22 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
     if (scrollPercentage >= 75) {
-        console.log(11111);
+        // Елемент, на якому буде відбуватися свайп
+        console.log(1);
+
+        const swipeElement = document.querySelector('html');
+
+        // Створюємо Hammer instance на цьому елементі
+        const hammer = new Hammer(swipeElement);
+
+        // Створюємо подію свайпу
+        const swipeEvent = new Hammer.Swipe();
+
+        // Відправляємо цю подію до елемента
+        hammer.emit('swipe', swipeEvent);
     }
 });
+
 class ra extends Vi {
     init() {
         super.init(), this.onScrollResize = this.onScrollResize.bind(this), this.onRaf = this.onRaf.bind(this), this.onGlLoaded = this.onGlLoaded.bind(this), this.ready = !1, this.passedTop = !1
