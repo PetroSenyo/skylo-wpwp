@@ -5076,25 +5076,15 @@ class na extends We {
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
         document.querySelector('.banner-page').addEventListener('scroll', function() {
-
             const bannerHeight = this.clientHeight;
-
-  
             const contentHeight = document.querySelector('#container-paralax').clientHeight;
-
-
             const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
-
             if (scrollPercentage >= 75) {
-                console.log('Доскролено на 75%!');
-
-                if (!e.inView) return;
-                const t = I(e.progress, 0, 1, 1, 3);
-                T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
-
+                window.scrollBy(0, 1200);
             }
         });
+
 
 
         if (e.id === "GLOBE-STEP-2") {
