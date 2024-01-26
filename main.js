@@ -5082,12 +5082,11 @@ class na extends We {
 
             if (scrollPercentage >= 75) {
                 console.log(111111);
-                const globeStep2 = document.getElementById('GLOBE-STEP-2');
-                if (globeStep2) {
-                    globeStep2.scrollIntoView({ behavior: 'smooth' });
-                }
+                // Assuming T.scroll.to("GLOBE-STEP-2") navigates to the desired slide
+                T.scroll.to("GLOBE-STEP-2");
             }
         });
+
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
