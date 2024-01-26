@@ -5090,35 +5090,6 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
 
     if (scrollPercentage >= 75) {
         console.log(11111);
-        function triggerSwipeUp(element) {
-            let touchStartEvent = new TouchEvent('touchstart', {
-                touches: [{ screenX: 0, screenY: 1000 }],
-                targetTouches: [{ screenX: 0, screenY: 1000 }],
-                changedTouches: [{ screenX: 0, screenY: 1000 }],
-                bubbles: true
-            });
-
-            let touchMoveEvent = new TouchEvent('touchmove', {
-                touches: [{ screenX: 0, screenY: 500 }],
-                targetTouches: [{ screenX: 0, screenY: 500 }],
-                changedTouches: [{ screenX: 0, screenY: 500 }],
-                bubbles: true
-            });
-
-            let touchEndEvent = new TouchEvent('touchend', {
-                touches: [],
-                targetTouches: [],
-                changedTouches: [{ screenX: 0, screenY: 500 }],
-                bubbles: true
-            });
-
-            element.dispatchEvent(touchStartEvent);
-            element.dispatchEvent(touchMoveEvent);
-            element.dispatchEvent(touchEndEvent);
-        }
-
-        triggerSwipeUp(document.querySelector('body'));
-
     }
 });
 class ra extends Vi {
