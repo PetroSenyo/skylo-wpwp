@@ -5082,19 +5082,7 @@ class na extends We {
 
             if (scrollPercentage >= 75) {
                 console.log(11111111111111);
-                const sectionGlobe = document.querySelector('.section-globe');
-                if (sectionGlobe) {
-                    sectionGlobe.style.transform = 'translate3d(0px, -300px, 0px)';
-                    sectionGlobe.style.opacity = '0';
-                }
-
-                // Змінюємо стилі для .globe-text-2
-                const globeText2 = document.querySelector('.globe-text-2');
-                if (globeText2) {
-                    globeText2.style.pointerEvents = 'auto';
-                    globeText2.style.opacity = '1';
-                    globeText2.style.transform = 'translate3d(0px, 0px, 0px)';
-                }
+               
             }
         });
 
