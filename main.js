@@ -5083,12 +5083,23 @@ class na extends We {
             if (scrollPercentage >= 75) {
                 console.log(1111111111111);
 
-                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                function simulateScroll(scrollTarget, deltaY) {
+                    // Створюємо нову подію скролу
+                    const event = new CustomEvent('scroll', {
+                        bubbles: true,
+                        cancelable: true,
+                        detail: {
+                            deltaY: deltaY
+                        }
+                    });
 
-                window.scrollTo({
-                    top: currentScroll + 1200,
-                    behavior: 'smooth' // Додаємо плавну прокрутку
-                });
+                    // Відправляємо подію на вказаний елемент
+                    scrollTarget.dispatchEvent(event);
+                }
+
+                const scrollElement = document.querySelector('html'); // Припускаємо, що .banner-page це елемент, на якому потрібно емулювати скрол
+                simulateScroll(scrollElement, 1200); // Емулюємо прокрутку на 1200 пікселів
+
             }
         });
 
