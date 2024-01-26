@@ -5087,6 +5087,9 @@ let isEventDispatched = false; // Змінна для відстеження, ч
 
 document.querySelector('.banner-page').addEventListener('scroll', function() {
     console.log(isEventDispatched);
+    const bannerHeight = this.clientHeight;
+    const contentHeight = document.querySelector('#container-paralax').clientHeight;
+    const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
     if (scrollPercentage >= 75) {
 
     } else {
@@ -5097,9 +5100,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
         return;
     }
 
-    const bannerHeight = this.clientHeight;
-    const contentHeight = document.querySelector('#container-paralax').clientHeight;
-    const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
+
 
     if (scrollPercentage >= 75) {
         const keydownEvent = new KeyboardEvent('keydown', {
