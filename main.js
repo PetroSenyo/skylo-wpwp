@@ -5376,24 +5376,22 @@ class T {
 
 T.init();
 
-document.addEventListener('DOMContentLoaded', () => {
-  const bannerPage = document.querySelector('.banner-page');
-  let startScrollPosition = 0;
+// Додаємо обробник подій на скролл для елемента з класом .banner-page
+document.querySelector('.banner-page').addEventListener('scroll', function() {
+    // Отримуємо висоту елемента .banner-page
+    const bannerHeight = this.scrollHeight - 500; // віднімаємо padding-bottom
 
-  bannerPage.addEventListener('touchstart', (e) => {
-    startScrollPosition = e.touches[0].pageY;
-  });
+    // Отримуємо поточну позицію скролу
+    const scrollPosition = this.scrollTop;
 
-  bannerPage.addEventListener('touchend', (e) => {
-    const endScrollPosition = e.changedTouches[0].pageY;
-    const scrolled = startScrollPosition - endScrollPosition;
-    const threshold = bannerPage.scrollHeight * 0.75; // 75% of the content
+    // Обчислюємо відсоток скролу
+    const scrollPercentage = (scrollPosition / bannerHeight) * 100;
 
-    // Check if the user has scrolled more than 75% of the content
-    if (scrolled > threshold) {
-      console.log(111111111111);
+    // Перевіряємо, чи скрол був на 75% або більше
+    if (scrollPercentage >= 75) {
+        // Виводимо повідомлення в консоль
+        console.log('Доскролено на 75%!');
     }
-  });
 });
 
 
