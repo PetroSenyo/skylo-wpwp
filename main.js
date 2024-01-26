@@ -5081,22 +5081,13 @@ class na extends We {
             const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
             if (scrollPercentage >= 75) {
-                console.log(11111111111111);
-                const scrollElement = document.querySelector('div[data-scroll][data-scroll-snap]');
-                const html = document.documentElement;
-                const body = document.body;
-
-                html.scrollTop += 3500;
-                body.scrollTop += 3500;
-                scrollElement.scrollTop += 3500;
-
+                console.log(111111);
+                const globeStep2 = document.getElementById('GLOBE-STEP-2');
+                if (globeStep2) {
+                    globeStep2.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
-
-
-
-
-
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
