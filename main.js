@@ -5105,6 +5105,24 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     }
 });
 
+
+window.addEventListener('scroll', function() {
+    const scrolled = window.scrollY; // Отримуємо поточну позицію скролу
+    console.log('Прокручено пікселів:', scrolled);
+
+    if (scrolled >= 500) {
+        // Якщо прокручено 500 пікселів, прокручуємо на 2500 пікселів вниз
+        window.scrollTo({
+            top: 2500,
+            behavior: 'smooth' // Додаємо плавну прокрутку
+        });
+
+        // Відключаємо подальше автоматичне прокручування після першого виконання
+        window.removeEventListener('scroll', this);
+    }
+});
+
+
 class ra extends Vi {
     init() {
         super.init(), this.onScrollResize = this.onScrollResize.bind(this), this.onRaf = this.onRaf.bind(this), this.onGlLoaded = this.onGlLoaded.bind(this), this.ready = !1, this.passedTop = !1
