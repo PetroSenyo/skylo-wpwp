@@ -5083,28 +5083,33 @@ class na extends We {
         }
     }
 }
+let isEventDispatched = false; // Змінна для відстеження, чи подія вже була відправлена
+
 document.querySelector('.banner-page').addEventListener('scroll', function() {
+    if (isEventDispatched) {
+        // Якщо подія вже була відправлена, не виконуємо подальших дій
+        return;
+    }
+
     const bannerHeight = this.clientHeight;
     const contentHeight = document.querySelector('#container-paralax').clientHeight;
     const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
-    // Змінна для відстеження, чи подія вже була відправлена
-    let eventDispatched = false;
+    if (scrollPercentage >= 75) {
+        const keydownEvent = new KeyboardEvent('keydown', {
+            key: 'ArrowDown',
+            code: 'ArrowDown',
+            bubbles: true,
+            cancelable: true
+        });
+        console.log(11111111);
+        document.dispatchEvent(keydownEvent);
 
-    if (scrollPercentage >= 75 && !eventDispatched) {
-        // Створюємо і відправляємо подію keydown для стрілочки вниз
-        // const keydownEvent = new KeyboardEvent('keydown', {
-        //     key: 'ArrowDown',
-        //     code: 'ArrowDown',
-        //     bubbles: true,
-        //     cancelable: true
-        // });
-        //
-        // document.dispatchEvent(keydownEvent);
-        console.log(111111);
-        eventDispatched = true;
+        // Відзначаємо, що подія була відправлена, і вимикаємо подальше виконання
+        isEventDispatched = true;
     }
 });
+
 
 
 
