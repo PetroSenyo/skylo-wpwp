@@ -5378,15 +5378,22 @@ T.init();
 
 document.addEventListener('DOMContentLoaded', () => {
   const bannerPage = document.querySelector('.banner-page');
-  const thresholdPercentage = 75;
+  let startScrollPosition = 0;
 
-  bannerPage.addEventListener('scroll', () => {
-    const scrollPosition = bannerPage.scrollTop;
-    const totalContentHeight = bannerPage.scrollHeight - bannerPage.clientHeight;
+  bannerPage.addEventListener('touchstart', (e) => {
+    startScrollPosition = e.touches[0].pageY;
+  });
 
-    if ((scrollPosition / totalContentHeight) * 100 > thresholdPercentage) {
-     console.log(211212211221);
+  bannerPage.addEventListener('touchend', (e) => {
+    const endScrollPosition = e.changedTouches[0].pageY;
+    const scrolled = startScrollPosition - endScrollPosition;
+    const threshold = bannerPage.scrollHeight * 0.75; // 75% of the content
+
+    // Check if the user has scrolled more than 75% of the content
+    if (scrolled > threshold) {
+      console.log(111111111111);
     }
   });
 });
+
 
