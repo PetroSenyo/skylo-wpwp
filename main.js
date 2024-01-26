@@ -5093,16 +5093,15 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
 
     if (scrollPercentage >= 75 && !eventDispatched) {
         // Створюємо і відправляємо подію keydown для стрілочки вниз
-        const keydownEvent = new KeyboardEvent('keydown', {
-            key: 'ArrowDown',
-            code: 'ArrowDown',
-            bubbles: true,
-            cancelable: true
-        });
-
-        document.dispatchEvent(keydownEvent);
-
-        // Встановлюємо, що подія вже була відправлена
+        // const keydownEvent = new KeyboardEvent('keydown', {
+        //     key: 'ArrowDown',
+        //     code: 'ArrowDown',
+        //     bubbles: true,
+        //     cancelable: true
+        // });
+        //
+        // document.dispatchEvent(keydownEvent);
+        console.log(111111);
         eventDispatched = true;
     }
 });
