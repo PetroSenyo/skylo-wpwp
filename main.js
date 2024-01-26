@@ -5090,7 +5090,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     const bannerHeight = this.clientHeight;
     const contentHeight = document.querySelector('#container-paralax').clientHeight;
     const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
-    if (scrollPercentage >= 75) {
+    if (scrollPercentage >= 95) {
 
     } else {
         isEventDispatched = false;
@@ -5102,7 +5102,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
 
 
 
-    if (scrollPercentage >= 75) {
+    if (scrollPercentage >= 95) {
         const keydownEvent = new KeyboardEvent('keydown', {
             key: 'ArrowDown',
             code: 'ArrowDown',
