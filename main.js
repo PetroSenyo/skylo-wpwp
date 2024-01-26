@@ -5088,8 +5088,11 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     const contentHeight = document.querySelector('#container-paralax').clientHeight;
     const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
-    if (scrollPercentage >= 75) {
-        // Створюємо подію keydown для стрілочки вниз
+    // Змінна для відстеження, чи подія вже була відправлена
+    let eventDispatched = false;
+
+    if (scrollPercentage >= 75 && !eventDispatched) {
+        // Створюємо і відправляємо подію keydown для стрілочки вниз
         const keydownEvent = new KeyboardEvent('keydown', {
             key: 'ArrowDown',
             code: 'ArrowDown',
@@ -5097,8 +5100,10 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
             cancelable: true
         });
 
-        // Відправляємо подію
         document.dispatchEvent(keydownEvent);
+
+        // Встановлюємо, що подія вже була відправлена
+        eventDispatched = true;
     }
 });
 
