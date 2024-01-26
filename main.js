@@ -5108,6 +5108,8 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
 
         // Відзначаємо, що подія була відправлена, і вимикаємо подальше виконання
         isEventDispatched = true;
+    } else {
+        isEventDispatched = false;
     }
 });
 
