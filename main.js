@@ -5086,6 +5086,12 @@ class na extends We {
 let isEventDispatched = false; // Змінна для відстеження, чи подія вже була відправлена
 
 document.querySelector('.banner-page').addEventListener('scroll', function() {
+    console.log(isEventDispatched);
+    if (scrollPercentage >= 75) {
+
+    } else {
+        isEventDispatched = false;
+    }
     if (isEventDispatched) {
         // Якщо подія вже була відправлена, не виконуємо подальших дій
         return;
@@ -5102,7 +5108,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
             bubbles: true,
             cancelable: true
         });
-        console.log(11111111);
+
         document.dispatchEvent(keydownEvent);
         document.dispatchEvent(keydownEvent);
 
@@ -5111,6 +5117,8 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
     } else {
         isEventDispatched = false;
     }
+
+
 });
 
 
