@@ -5106,7 +5106,7 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
 });
 
 
-window.addEventListener('scroll', function() {
+document.querySelector('div').addEventListener('scroll', function() {
     const scrolled = window.scrollY; // Отримуємо поточну позицію скролу
     console.log('Прокручено пікселів:', scrolled);
 
