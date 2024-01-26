@@ -5081,10 +5081,14 @@ class na extends We {
             const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
 
             if (scrollPercentage >= 75) {
-                console.log(111111);
-
+                console.log(11111);
+                const globeStep2Section = document.getElementById('GLOBE-STEP-2');
+                if (globeStep2Section) {
+                    globeStep2Section.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
+
 
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
