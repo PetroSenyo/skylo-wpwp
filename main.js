@@ -5375,3 +5375,19 @@ class T {
 }
 
 T.init();
+document.addEventListener('DOMContentLoaded', function() {
+    const bannerPage = document.querySelector('.banner-page');
+
+    if (bannerPage) {
+        bannerPage.addEventListener('scroll', function() {
+            let scrollHeight = bannerPage.scrollHeight;
+            let scrollTop = bannerPage.scrollTop;
+            let clientHeight = bannerPage.clientHeight;
+            let scrolledPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+
+            if (scrolledPercentage > 75) {
+                console.log(21);
+            }
+        });
+    }
+});
