@@ -5104,6 +5104,8 @@ document.querySelector('.banner-page').addEventListener('scroll', function() {
         });
         console.log(11111111);
         document.dispatchEvent(keydownEvent);
+        document.dispatchEvent(keydownEvent);
+        document.dispatchEvent(keydownEvent);
 
         // Відзначаємо, що подія була відправлена, і вимикаємо подальше виконання
         isEventDispatched = true;
@@ -5407,5 +5409,3 @@ class T {
 }
 
 T.init();
-
-
