@@ -5083,46 +5083,6 @@ class na extends We {
         }
     }
 }
-let isEventDispatched = false; // Змінна для відстеження, чи подія вже була відправлена
-
-document.querySelector('.banner-page').addEventListener('scroll', function() {
-    console.log(isEventDispatched);
-    const bannerHeight = this.clientHeight;
-    const contentHeight = document.querySelector('#container-paralax').clientHeight;
-    const scrollPercentage = (this.scrollTop / (contentHeight - bannerHeight)) * 100;
-    if (scrollPercentage >= 80) {
-
-    } else {
-        isEventDispatched = false;
-    }
-    if (isEventDispatched) {
-        // Якщо подія вже була відправлена, не виконуємо подальших дій
-        return;
-    }
-
-
-
-    if (scrollPercentage >= 80) {
-        const keydownEvent = new KeyboardEvent('keydown', {
-            key: 'ArrowDown',
-            code: 'ArrowDown',
-            bubbles: true,
-            cancelable: true
-        });
-
-        document.dispatchEvent(keydownEvent);
-
-        // Відзначаємо, що подія була відправлена, і вимикаємо подальше виконання
-        isEventDispatched = true;
-    } else {
-        isEventDispatched = false;
-    }
-
-
-});
-
-
-
 
 
 class ra extends Vi {
