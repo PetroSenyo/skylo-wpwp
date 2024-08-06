@@ -5072,14 +5072,14 @@ class dd extends We {
     }
 
     onScroll(e) {
-        if (!!T.gl && ((e.id !== "GLOBE-STEP-0" || e.id !== "GLOBE-STEP-11") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-11" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-11")) {
+        if (!!T.gl && ((e.id !== "GLOBE-STEP-0" || e.id !== "GLOBE-STEP-1") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-1" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-1")) {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
         console.log(77777);
 
-        if (e.id === "GLOBE-STEP-11") {
+        if (e.id === "GLOBE-STEP-1") {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
@@ -5131,13 +5131,13 @@ class na extends We {
     }
 
     onScroll(e) {
-        if (!!T.gl && ((e.id !== "GLOBE-STEP-0" || e.id !== "GLOBE-STEP-2") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-2")) {
+        if (!!T.gl && ((e.id !== "GLOBE-STEP-0" || e.id !== "GLOBE-STEP-11") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-11" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-11")) {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
 
-        if (e.id === "GLOBE-STEP-2") {
+        if (e.id === "GLOBE-STEP-11") {
             if (!e.inView) return;
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
