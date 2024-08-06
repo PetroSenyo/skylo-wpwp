@@ -5187,7 +5187,7 @@ class oa extends We {
 
     onScroll(e) {
         if (!!T.gl) {
-            if ((e.id !== "GLOBE-STEP-2" || e.id !== "GLOBE-STEP-3") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2") {
+            if ((e.id !== "GLOBE-STEP-11" || e.id !== "GLOBE-STEP-3") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2") {
                 if (!e.inView) return;
                 // console.log(6);
                 T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02);
