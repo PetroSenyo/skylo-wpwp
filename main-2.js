@@ -5055,6 +5055,36 @@ class We extends Vi {
     }
 }
 
+
+
+class dd extends We {
+    init() {
+        super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".globe-step-0-section"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-0"), this.observe()
+    }
+
+    addEvents() {
+        super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
+        console.log(2323);
+    }
+
+    onResize() {
+        super.onResize()
+    }
+
+    onScroll(e) {
+        if (!!T.gl && ((e.id !== "GLOBE-STEP-0" || e.id !== "GLOBE-STEP-1") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-1" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-1")) {
+            if (!e.inView) return;
+            const t = I(e.progress, 0, 1, 1, 3);
+            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
+        }
+
+        if (e.id === "GLOBE-STEP-1") {
+            if (!e.inView) return;
+            const t = I(e.progress, 0, 1, 1, 3);
+            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
+        }
+    }
+}
 class na extends We {
     init() {
         super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".section-globe"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-1"), this.observe()
@@ -5083,36 +5113,6 @@ class na extends We {
         }
     }
 }
-
-class dd extends We {
-    init() {
-        super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".globe-step-0-section"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-0"), this.observe()
-    }
-
-    addEvents() {
-        super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
-        console.log(2323);
-    }
-
-    onResize() {
-        super.onResize()
-    }
-
-    onScroll(e) {
-        if (!!T.gl && ((e.id !== "GLOBE-STEP-1" || e.id !== "GLOBE-STEP-2") && (this.el.style.opacity = 0), e.id === "GLOBE-STEP-2" && T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile : T.gl.camera.centerDefaults.dekstop), e.id === "GLOBE-STEP-2")) {
-            if (!e.inView) return;
-            const t = I(e.progress, 0, 1, 1, 3);
-            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
-        }
-
-        if (e.id === "GLOBE-STEP-2") {
-            if (!e.inView) return;
-            const t = I(e.progress, 0, 1, 1, 3);
-            T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -300)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
-        }
-    }
-}
-
 
 class ra extends Vi {
     init() {
