@@ -5084,7 +5084,7 @@ class na extends We {
     }
 }
 
-class fa extends We {
+class dd extends We {
     init() {
         super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".globe-step-0-section"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-0"), this.observe()
     }
