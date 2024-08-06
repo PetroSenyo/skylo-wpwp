@@ -5286,36 +5286,13 @@ class ua extends We {
 }
 
 class ha extends ft {
-     async init() {
-        super.init();
-        this.pageElements = [];
-        this.animateIn = this.animateIn.bind(this);
-        this.animateOut = this.animateOut.bind(this);
-        this.settings = {
+    async init() {
+        super.init(), this.pageElements = [], this.animateIn = this.animateIn.bind(this), this.animateOut = this.animateOut.bind(this), this.settings = {
             socials: !0,
             images: !0,
-            in: { fromBottom: !0 }
-        };
-        this.splitTexts = new sa(this.el);
-        this.animatedParts = this.getAll("[data-animate]");
-
-        // Add your new section here
-        this.addComponents(".globe-step-1", na);
-        this.addComponents(".globe-switch", ra);
-        this.addComponents(".globe-text-2", oa);
-        this.addComponents(".globe-text-3", aa);
-        this.addComponents(".section-photos", la);
-        this.addComponents(".section-stats", ca);
-        this.addComponents(".newsroom-footer-wrapper", ua);
-
-        // New section registration
-        this.addComponents(".globe-text-1", YourComponentClass); // Replace `YourComponentClass` with the appropriate class if needed
-
-        await oe(200);
-        this.animateIn();
+            in: {fromBottom: !0}
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"), this.addComponents(".globe-step-1", na), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
     }
-
-    
 
     addComponents(e, t, i = this.el, s = !1) {
         let o = [];
