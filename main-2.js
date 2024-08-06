@@ -5057,7 +5057,7 @@ class We extends Vi {
 
 class na extends We {
     init() {
-        super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".section-globe, .banner-page-2"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-1"), this.observe()
+        super.init(), this.sheet = z.theatre.sheet("globe"), this.text = document.querySelector(".section-globe"), this.markers = document.querySelector(".globe-markers"), this.nextButton = document.querySelector(".interactive-globes_next"), this.sectionEl = document.querySelector(".globe-step-1"), this.observe()
     }
 
     addEvents() {
