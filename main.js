@@ -5270,7 +5270,7 @@ class la extends We {
             T.nav.themeLight(), T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02);
             const {SIM_POS_PHOTOS_3: o, SIM_ROT_PHOTOS_3: a, SIM_POS_PHOTOS_2: l, SIM_ROT_PHOTOS_2: n} = D;
             T.gl.simCard.position.lerpVectors(l, o, e.progress), this.rotationVector.lerpVectors(n, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), this.el.style.opacity = 1, this.translate(this.col1inner, I(e.progress, 0, 1, -s, -s * 2), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s, s * 2), "%")
-            this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1);
+            this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
         }
         // if (e.id === "STATS-STEP") {
         //     if (!e.inView) return;
