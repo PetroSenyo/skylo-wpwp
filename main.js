@@ -5251,7 +5251,7 @@ class la extends We {
         if (!T.gl) return;
         const {w: t} = K, i = t > H.BREAKPOINTS.LG;
         let s = 25;
-        if (i && (s = 20), (e.id !== "PHOTOS-STEP-1" || e.id !== "PHOTOS-STEP-2" || e.id !== "PHOTOS-STEP-3" || e.id === "STATS-STEP") && (this.el.style.opacity = 0), e.id === "PHOTOS-STEP-1") {
+        if (i && (s = 20), (e.id !== "PHOTOS-STEP-1" || e.id !== "PHOTOS-STEP-2" || e.id !== "PHOTOS-STEP-3" ) && (this.el.style.opacity = 0), e.id === "PHOTOS-STEP-1") {
             if (!e.inView) return;
             T.gl.camera.center.lerpVectors(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobileGlobe2 : T.gl.camera.centerDefaults.dekstopGlobe2, K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02, I(e.progress, 0, 1, 0, 1)), e.progress > .25 ? (T.gl.camera.panning = !1, this.isPhotosActive || this.animateIn(), this.isPhotosActive = !0) : (T.gl.camera.panning = !0, this.isPhotosActive && this.animateOut(), this.isPhotosActive = !1), T.gl.setOpacity(fe(I(e.progress, 0, .5, 1, 0), 0, 1));
             const o = I(e.progress, 0, .5, 1, .85);
@@ -5296,11 +5296,11 @@ class ua extends We {
             if (!e.inView) return;
             T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
             const {
-                SIM_POS_STATS: t,
+                
                 SIM_POS_FOOTER: i,
-                SIM_ROT_STATS: s,
+                
                 SIM_ROT_FOOTER: o,
-                SIM_SCALE_STATS: a,
+                
                 SIM_SCALE_DEFAULT: l
             } = D;
             T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
