@@ -2287,10 +2287,6 @@ class po extends ee {
             presetKey: "SIM_ROT_PHOTOS_3"
         }).on("change", t => {
             this.rotation.set(t.value.x, t.value.y, t.value.z)
-        }), e.addInput(D, "SIM_POS_STATS", {label: "SIM_POS_STATS", presetKey: "SIM_POS_STATS"}).on("change", t => {
-            this.position.copy(t.value)
-        }), e.addInput(D, "SIM_ROT_STATS", {label: "SIM_ROT_STATS", presetKey: "SIM_ROT_STATS"}).on("change", t => {
-            this.rotation.set(t.value.x, t.value.y, t.value.z)
         }), e.addInput(D, "SIM_POS_FOOTER", {label: "SIM_POS_FOOTER", presetKey: "SIM_POS_FOOTER"}).on("change", t => {
             this.position.copy(t.value)
         }), e.addInput(D, "SIM_ROT_FOOTER", {label: "SIM_ROT_FOOTER", presetKey: "SIM_ROT_FOOTER"}).on("change", t => {
