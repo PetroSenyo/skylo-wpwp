@@ -5094,7 +5094,7 @@ class kk extends We {
 
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
-        console.log(66666);
+        
     }
 
     onResize() {
