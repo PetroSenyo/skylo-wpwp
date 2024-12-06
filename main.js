@@ -5273,7 +5273,7 @@ class la extends We {
             if (!e.inView) return;
             T.nav.themeLight(), T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02);
             const {SIM_POS_PHOTOS_3: o, SIM_ROT_PHOTOS_3: a, SIM_POS_PHOTOS_2: l, SIM_ROT_PHOTOS_2: n} = D;
-            // T.gl.simCard.position.lerpVectors(l, o, e.progress), this.rotationVector.lerpVectors(n, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), this.el.style.opacity = 1, this.translate(this.col1inner, I(e.progress, 0, 1, -s, -s * 2), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s, s * 2), "%")
+            T.gl.simCard.position.lerpVectors(l, o, e.progress), this.rotationVector.lerpVectors(n, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), this.el.style.opacity = 1, this.translate(this.col1inner, I(e.progress, 0, 1, -s, -s * 2), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s, s * 2), "%")
         }
         // if (e.id === "STATS-STEP") {
         //     if (!e.inView) return;
@@ -5296,9 +5296,9 @@ class ua extends We {
             if (!e.inView) return;
             // T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
             const {
-                SIM_POS_STATS: t,
+                // SIM_POS_STATS: t,
                 SIM_POS_FOOTER: i,
-                SIM_ROT_STATS: s,
+                // SIM_ROT_STATS: s,
                 SIM_ROT_FOOTER: o,
                 SIM_SCALE_STATS: a,
                 SIM_SCALE_DEFAULT: l
