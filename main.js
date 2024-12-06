@@ -5330,7 +5330,7 @@ class ua extends We {
     onScroll(e) {
         if (!!T.gl && (e.id !== "FOOTER-STEP" && (this.el.style.opacity = 0), e.id === "FOOTER-STEP")) {
             if (!e.inView) return;
-            // T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
+            T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
             const {
                 SIM_POS_STATS: t,
                 SIM_POS_FOOTER: i,
