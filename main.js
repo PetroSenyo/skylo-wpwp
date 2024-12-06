@@ -5251,7 +5251,7 @@ class la extends We {
         if (!T.gl) return;
         const {w: t} = K, i = t > H.BREAKPOINTS.LG;
         let s = 25;
-        if (i && (s = 20), (e.id !== "PHOTOS-STEP-1" || e.id !== "PHOTOS-STEP-2" || e.id !== "PHOTOS-STEP-3" ) && (this.el.style.opacity = 0), e.id === "PHOTOS-STEP-1") {
+        if (i && (s = 20), (e.id !== "PHOTOS-STEP-1" || e.id !== "PHOTOS-STEP-2" || e.id !== "PHOTOS-STEP-3" || e.id === "STATS-STEP") && (this.el.style.opacity = 0), e.id === "PHOTOS-STEP-1") {
             if (!e.inView) return;
             T.gl.camera.center.lerpVectors(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobileGlobe2 : T.gl.camera.centerDefaults.dekstopGlobe2, K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02, I(e.progress, 0, 1, 0, 1)), e.progress > .25 ? (T.gl.camera.panning = !1, this.isPhotosActive || this.animateIn(), this.isPhotosActive = !0) : (T.gl.camera.panning = !0, this.isPhotosActive && this.animateOut(), this.isPhotosActive = !1), T.gl.setOpacity(fe(I(e.progress, 0, .5, 1, 0), 0, 1));
             const o = I(e.progress, 0, .5, 1, .85);
@@ -5283,7 +5283,42 @@ class la extends We {
 }
 
 class ca extends We {
-    
+    init() {
+        super.init(), this.coverage = this.get(".stats-coverage"), this.price = this.get(".stats-price"), this.hardware = this.get(".stats-hardware"), this.cols = this.getAll(".stats-col"), this.sectionEl = document.querySelector('[data-scroll-item="STATS-STEP"]'), this.el.style.pointerEvents = "none", this.rotationVector = new ce, this.observe()
+    }
+
+    countAnimation(e, t, i, s, o) {
+        const a = parseFloat(t.innerHTML), l = I(e, 0, 1, i, s), n = hs(l, o);
+        a !== n && (t.innerHTML = n)
+    }
+
+    onResize() {
+        super.onResize()
+    }
+
+    onScroll(e) {
+        if (!!T.gl) {
+            if ((e.id !== "STATS-STEP" || e.id !== "STATS-STEP") && (this.el.style.opacity = 0), e.id === "STATS-STEP") {
+                if (!e.inView) return;
+                T.nav.themeLight(), T.gl.camera.center.lerpVectors(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02, K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03, I(e.progress, 0, 1, 0, 1));
+                const {
+                    SIM_POS_STATS: t,
+                    SIM_POS_PHOTOS_3: i,
+                    SIM_ROT_STATS: s,
+                    SIM_ROT_PHOTOS_3: o,
+                    SIM_SCALE_DEFAULT: a,
+                    SIM_SCALE_STATS: l
+                } = D;
+                T.gl.simCard.position.lerpVectors(i, t, e.progress), this.rotationVector.lerpVectors(o, s, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
+                const n = I(e.progress, 0, 1, a, l);
+                T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), this.countAnimation(e.progress, this.coverage, 0, 15.3, 1), this.cols[0].style.opacity = I(e.progress, 0, 1, 0, 1), this.countAnimation(e.progress, this.price, 20, 6, 0), this.countAnimation(e.progress, this.hardware, 20, 0, 0), W(this.cols[1], I(e.progress, 0, 1, 400, 0)), W(this.cols[2], I(e.progress, 0, 1, 500, 0)), this.cols[1].style.opacity = I(e.progress, 0, 1, 0, 1), this.cols[2].style.opacity = I(e.progress, 0, 1, 0, 1), W(this.cols[0], I(e.progress, 0, 1, 300, 0))
+            }
+            if (e.id === "FOOTER-STEP") {
+                if (!e.inView) return;
+                T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
+            }
+        }
+    }
 }
 
 class ua extends We {
@@ -5296,14 +5331,14 @@ class ua extends We {
             if (!e.inView) return;
             T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
             const {
-                
+                SIM_POS_STATS: t,
                 SIM_POS_FOOTER: i,
-                
+                SIM_ROT_STATS: s,
                 SIM_ROT_FOOTER: o,
-                
+                SIM_SCALE_STATS: a,
                 SIM_SCALE_DEFAULT: l
             } = D;
-            this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
+            T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
             const n = I(e.progress, 0, 1, a, l);
             T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
         }
@@ -5316,7 +5351,7 @@ class ha extends ft {
             socials: !0,
             images: !0,
             in: {fromBottom: !0}
-        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),this.addComponents(".globe-step-0", dd), this.addComponents(".globe-step-1", na),this.addComponents(".globe-step-11", kk), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),this.addComponents(".globe-step-0", dd), this.addComponents(".globe-step-1", na),this.addComponents(".globe-step-11", kk), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".newsroom-footer-wrapper", ua), this.addComponents(".section-stats", ca), await oe(200), this.animateIn()
     }
 
     addComponents(e, t, i = this.el, s = !1) {
