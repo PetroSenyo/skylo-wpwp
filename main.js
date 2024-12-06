@@ -5305,7 +5305,8 @@ class ua extends We {
             } = D;
             // T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
             const n = I(e.progress, 0, 1, a, l);
-            // T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
+            // T.gl.simCard.scale.set(n, n, n), 
+            this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
         }
     }
 }
