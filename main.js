@@ -2287,6 +2287,10 @@ class po extends ee {
             presetKey: "SIM_ROT_PHOTOS_3"
         }).on("change", t => {
             this.rotation.set(t.value.x, t.value.y, t.value.z)
+        }), e.addInput(D, "SIM_POS_STATS", {label: "SIM_POS_STATS", presetKey: "SIM_POS_STATS"}).on("change", t => {
+            this.position.copy(t.value)
+        }), e.addInput(D, "SIM_ROT_STATS", {label: "SIM_ROT_STATS", presetKey: "SIM_ROT_STATS"}).on("change", t => {
+            this.rotation.set(t.value.x, t.value.y, t.value.z)
         }), e.addInput(D, "SIM_POS_FOOTER", {label: "SIM_POS_FOOTER", presetKey: "SIM_POS_FOOTER"}).on("change", t => {
             this.position.copy(t.value)
         }), e.addInput(D, "SIM_ROT_FOOTER", {label: "SIM_ROT_FOOTER", presetKey: "SIM_ROT_FOOTER"}).on("change", t => {
@@ -5060,7 +5064,7 @@ class dd extends We {
 
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
-        
+        console.log(66666);
     }
 
     onResize() {
@@ -5073,7 +5077,7 @@ class dd extends We {
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -800)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
-        
+        console.log(77777);
 
         if (e.id === "GLOBE-STEP-1") {
             if (!e.inView) return;
@@ -5090,7 +5094,7 @@ class kk extends We {
 
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
-        
+        console.log(66666);
     }
 
     onResize() {
@@ -5103,7 +5107,7 @@ class kk extends We {
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -800)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
-        
+        console.log(77777);
 
         if (e.id === "GLOBE-STEP-2") {
             if (!e.inView) return;
@@ -5270,16 +5274,51 @@ class la extends We {
             T.nav.themeLight(), T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02);
             const {SIM_POS_PHOTOS_3: o, SIM_ROT_PHOTOS_3: a, SIM_POS_PHOTOS_2: l, SIM_ROT_PHOTOS_2: n} = D;
             T.gl.simCard.position.lerpVectors(l, o, e.progress), this.rotationVector.lerpVectors(n, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), this.el.style.opacity = 1, this.translate(this.col1inner, I(e.progress, 0, 1, -s, -s * 2), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s, s * 2), "%")
-            this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
         }
         if (e.id === "STATS-STEP") {
-          this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
+            if (!e.inView) return;
+            e.progress > .25 ? (this.isStatsActive && this.animateOut(), this.isStatsActive = !1) : (this.isStatsActive || this.animateIn(), this.isStatsActive = !0), this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), W(this.text, I(e.progress, 0, 1, 0, -200)), this.translate(this.col1inner, I(e.progress, 0, 1, -s * 2, -s * 3), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s * 2, s * 3), "%")
         }
     }
 }
 
 class ca extends We {
-   
+    init() {
+        super.init(), this.coverage = this.get(".stats-coverage"), this.price = this.get(".stats-price"), this.hardware = this.get(".stats-hardware"), this.cols = this.getAll(".stats-col"), this.sectionEl = document.querySelector('[data-scroll-item="STATS-STEP"]'), this.el.style.pointerEvents = "none", this.rotationVector = new ce, this.observe()
+    }
+
+    countAnimation(e, t, i, s, o) {
+        const a = parseFloat(t.innerHTML), l = I(e, 0, 1, i, s), n = hs(l, o);
+        a !== n && (t.innerHTML = n)
+    }
+
+    onResize() {
+        super.onResize()
+    }
+
+    onScroll(e) {
+        if (!!T.gl) {
+            if ((e.id !== "STATS-STEP" || e.id !== "STATS-STEP") && (this.el.style.opacity = 0), e.id === "STATS-STEP") {
+                if (!e.inView) return;
+                T.nav.themeLight(), T.gl.camera.center.lerpVectors(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02, K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03, I(e.progress, 0, 1, 0, 1));
+                const {
+                    SIM_POS_STATS: t,
+                    SIM_POS_PHOTOS_3: i,
+                    SIM_ROT_STATS: s,
+                    SIM_ROT_PHOTOS_3: o,
+                    SIM_SCALE_DEFAULT: a,
+                    SIM_SCALE_STATS: l
+                } = D;
+                T.gl.simCard.position.lerpVectors(i, t, e.progress), this.rotationVector.lerpVectors(o, s, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
+                const n = I(e.progress, 0, 1, a, l);
+                T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), this.countAnimation(e.progress, this.coverage, 0, 15.3, 1), this.cols[0].style.opacity = I(e.progress, 0, 1, 0, 1), this.countAnimation(e.progress, this.price, 20, 6, 0), this.countAnimation(e.progress, this.hardware, 20, 0, 0), W(this.cols[1], I(e.progress, 0, 1, 400, 0)), W(this.cols[2], I(e.progress, 0, 1, 500, 0)), this.cols[1].style.opacity = I(e.progress, 0, 1, 0, 1), this.cols[2].style.opacity = I(e.progress, 0, 1, 0, 1), W(this.cols[0], I(e.progress, 0, 1, 300, 0))
+            }
+            if (e.id === "FOOTER-STEP") {
+                if (!e.inView) return;
+                T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
+            }
+        }
+    }
 }
 
 class ua extends We {
@@ -5290,20 +5329,18 @@ class ua extends We {
     onScroll(e) {
         if (!!T.gl && (e.id !== "FOOTER-STEP" && (this.el.style.opacity = 0), e.id === "FOOTER-STEP")) {
             if (!e.inView) return;
-            // T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
+            T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
             const {
-                // SIM_POS_STATS: t,
+                SIM_POS_STATS: t,
                 SIM_POS_FOOTER: i,
-                // SIM_ROT_STATS: s,
+                SIM_ROT_STATS: s,
                 SIM_ROT_FOOTER: o,
                 SIM_SCALE_STATS: a,
                 SIM_SCALE_DEFAULT: l
             } = D;
-            // T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
+            T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
             const n = I(e.progress, 0, 1, a, l);
-      
             T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
-            this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
         }
     }
 }
@@ -5314,7 +5351,7 @@ class ha extends ft {
             socials: !0,
             images: !0,
             in: {fromBottom: !0}
-        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),this.addComponents(".globe-step-0", dd), this.addComponents(".globe-step-1", na),this.addComponents(".globe-step-11", kk), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".newsroom-footer-wrapper", ua),  await oe(200), this.animateIn()
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),this.addComponents(".globe-step-0", dd), this.addComponents(".globe-step-1", na),this.addComponents(".globe-step-11", kk), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
     }
 
     addComponents(e, t, i = this.el, s = !1) {
@@ -5401,3 +5438,5 @@ class T {
 }
 
 T.init();
+
+
