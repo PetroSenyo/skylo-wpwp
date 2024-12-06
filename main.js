@@ -5316,7 +5316,7 @@ class ca extends We {
             if (e.id === "FOOTER-STEP") {
                 if (!e.inView) return;
                 T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
-                this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), 1, 1)
+                // this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), 1, 1)
             }
         }
     }
@@ -5330,7 +5330,7 @@ class ua extends We {
     onScroll(e) {
         if (!!T.gl && (e.id !== "FOOTER-STEP" && (this.el.style.opacity = 0), e.id === "FOOTER-STEP")) {
             if (!e.inView) return;
-            T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
+            // T.gl.camera.center.copy(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03);
             const {
                 SIM_POS_STATS: t,
                 SIM_POS_FOOTER: i,
