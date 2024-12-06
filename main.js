@@ -5283,42 +5283,7 @@ class la extends We {
 }
 
 class ca extends We {
-    init() {
-        super.init(), this.coverage = this.get(".stats-coverage"), this.price = this.get(".stats-price"), this.hardware = this.get(".stats-hardware"), this.cols = this.getAll(".stats-col"), this.sectionEl = document.querySelector('[data-scroll-item="STATS-STEP"]'), this.el.style.pointerEvents = "none", this.rotationVector = new ce, this.observe()
-    }
-
-    countAnimation(e, t, i, s, o) {
-        const a = parseFloat(t.innerHTML), l = I(e, 0, 1, i, s), n = hs(l, o);
-        a !== n && (t.innerHTML = n)
-    }
-
-    onResize() {
-        super.onResize()
-    }
-
-    onScroll(e) {
-        if (!!T.gl) {
-            if ((e.id !== "STATS-STEP" || e.id !== "STATS-STEP") && (this.el.style.opacity = 0), e.id === "STATS-STEP") {
-                if (!e.inView) return;
-                T.nav.themeLight(), T.gl.camera.center.lerpVectors(K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile02 : T.gl.camera.centerDefaults.dekstop02, K.w < H.BREAKPOINTS.MD ? T.gl.camera.centerDefaults.mobile03 : T.gl.camera.centerDefaults.dekstop03, I(e.progress, 0, 1, 0, 1));
-                const {
-                    SIM_POS_STATS: t,
-                    SIM_POS_PHOTOS_3: i,
-                    SIM_ROT_STATS: s,
-                    SIM_ROT_PHOTOS_3: o,
-                    SIM_SCALE_DEFAULT: a,
-                    SIM_SCALE_STATS: l
-                } = D;
-                T.gl.simCard.position.lerpVectors(i, t, e.progress), this.rotationVector.lerpVectors(o, s, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
-                const n = I(e.progress, 0, 1, a, l);
-                T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), this.countAnimation(e.progress, this.coverage, 0, 15.3, 1), this.cols[0].style.opacity = I(e.progress, 0, 1, 0, 1), this.countAnimation(e.progress, this.price, 20, 6, 0), this.countAnimation(e.progress, this.hardware, 20, 0, 0), W(this.cols[1], I(e.progress, 0, 1, 400, 0)), W(this.cols[2], I(e.progress, 0, 1, 500, 0)), this.cols[1].style.opacity = I(e.progress, 0, 1, 0, 1), this.cols[2].style.opacity = I(e.progress, 0, 1, 0, 1), W(this.cols[0], I(e.progress, 0, 1, 300, 0))
-            }
-            if (e.id === "FOOTER-STEP") {
-                if (!e.inView) return;
-                T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
-            }
-        }
-    }
+    
 }
 
 class ua extends We {
