@@ -5316,7 +5316,7 @@ class ca extends We {
             if (e.id === "FOOTER-STEP") {
                 if (!e.inView) return;
                 T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
-               this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), 1, 1)
+               // this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), 1, 1)
             }
         }
     }
@@ -5339,10 +5339,10 @@ class ua extends We {
                 SIM_SCALE_STATS: a,
                 SIM_SCALE_DEFAULT: l
             } = D;
-            T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
+            // T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
             const n = I(e.progress, 0, 1, a, l);
             // T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
-            this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), 1, 1)
+            this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), .5, 1)
         }
     }
 }
