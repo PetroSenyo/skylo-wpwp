@@ -5272,10 +5272,9 @@ class la extends We {
             T.gl.simCard.position.lerpVectors(l, o, e.progress), this.rotationVector.lerpVectors(n, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), this.el.style.opacity = 1, this.translate(this.col1inner, I(e.progress, 0, 1, -s, -s * 2), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s, s * 2), "%")
             this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
         }
-        // if (e.id === "STATS-STEP") {
-        //     if (!e.inView) return;
-        //     e.progress > .25 ? (this.isStatsActive && this.animateOut(), this.isStatsActive = !1) : (this.isStatsActive || this.animateIn(), this.isStatsActive = !0), this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), W(this.text, I(e.progress, 0, 1, 0, -200)), this.translate(this.col1inner, I(e.progress, 0, 1, -s * 2, -s * 3), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s * 2, s * 3), "%")
-        // }
+        if (e.id === "STATS-STEP") {
+          this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
+        }
     }
 }
 
@@ -5301,9 +5300,9 @@ class ua extends We {
                 SIM_SCALE_DEFAULT: l
             } = D;
             // T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
-            const n = I(e.progress, 1, 1, a, l);
+            const n = I(e.progress, 0, 1, a, l);
       
-            T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 1, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
+            T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
             this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 1), 1, 1);
         }
     }
