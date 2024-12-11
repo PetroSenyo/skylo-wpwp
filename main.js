@@ -5279,7 +5279,7 @@ class la extends We {
         //     if (!e.inView) return;
         //     e.progress > .25 ? (this.isStatsActive && this.animateOut(), this.isStatsActive = !1) : (this.isStatsActive || this.animateIn(), this.isStatsActive = !0), this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), W(this.text, I(e.progress, 0, 1, 0, -200)), this.translate(this.col1inner, I(e.progress, 0, 1, -s * 2, -s * 3), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s * 2, s * 3), "%")
         // }
-        T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
+        // T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
 
     }
 }
