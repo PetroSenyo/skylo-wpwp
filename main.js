@@ -5064,7 +5064,7 @@ class dd extends We {
 
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
-        console.log(66666);
+        
     }
 
     onResize() {
@@ -5077,7 +5077,7 @@ class dd extends We {
             const t = I(e.progress, 0, 1, 1, 3);
             T.gl.setOpacity(I(e.progress, 0, .5, 1, 0)), W(this.text, I(e.progress, 0, 1, 0, -800)), this.text.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), this.markers.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1)
         }
-        console.log(77777);
+        
 
         if (e.id === "GLOBE-STEP-1") {
             if (!e.inView) return;
@@ -5094,7 +5094,7 @@ class kk extends We {
 
     addEvents() {
         super.addEvents(), this.nextButton.addEventListener("click", () => T.scroll.toNext())
-        console.log(66666);
+        
     }
 
     onResize() {
@@ -5275,10 +5275,12 @@ class la extends We {
             const {SIM_POS_PHOTOS_3: o, SIM_ROT_PHOTOS_3: a, SIM_POS_PHOTOS_2: l, SIM_ROT_PHOTOS_2: n} = D;
             T.gl.simCard.position.lerpVectors(l, o, e.progress), this.rotationVector.lerpVectors(n, a, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z), this.el.style.opacity = 1, this.translate(this.col1inner, I(e.progress, 0, 1, -s, -s * 2), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s, s * 2), "%")
         }
-        if (e.id === "STATS-STEP") {
-            if (!e.inView) return;
-            e.progress > .25 ? (this.isStatsActive && this.animateOut(), this.isStatsActive = !1) : (this.isStatsActive || this.animateIn(), this.isStatsActive = !0), this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), W(this.text, I(e.progress, 0, 1, 0, -200)), this.translate(this.col1inner, I(e.progress, 0, 1, -s * 2, -s * 3), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s * 2, s * 3), "%")
-        }
+        // if (e.id === "STATS-STEP") {
+        //     if (!e.inView) return;
+        //     e.progress > .25 ? (this.isStatsActive && this.animateOut(), this.isStatsActive = !1) : (this.isStatsActive || this.animateIn(), this.isStatsActive = !0), this.el.style.opacity = fe(I(e.progress, 0, .5, 1, 0), 0, 1), W(this.text, I(e.progress, 0, 1, 0, -200)), this.translate(this.col1inner, I(e.progress, 0, 1, -s * 2, -s * 3), "%"), this.translate(this.col2inner, I(e.progress, 0, 1, s * 2, s * 3), "%")
+        // }
+        T.nav.themeLight(), this.el.style.opacity = I(e.progress, 0, .5, 1, 0), W(this.cols[0], I(e.progress, 0, 1, 0, -300)), W(this.cols[1], I(e.progress, 0, 1, 0, -400)), W(this.cols[2], I(e.progress, 0, 1, 0, -500))
+
     }
 }
 
@@ -5340,7 +5342,8 @@ class ua extends We {
             } = D;
             T.gl.simCard.position.lerpVectors(t, i, e.progress), this.rotationVector.lerpVectors(s, o, e.progress), T.gl.simCard.rotation.set(this.rotationVector.x, this.rotationVector.y, this.rotationVector.z);
             const n = I(e.progress, 0, 1, a, l);
-            T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
+            this.el.style.opacity = fe(I(e.progress, 1, .5, 1, 0), 0, 1)
+            // T.gl.simCard.scale.set(n, n, n), this.el.style.opacity = I(e.progress, .5, 1, 0, 1), W(this.el, I(e.progress, 0, 1, 400, 0))
         }
     }
 }
@@ -5351,7 +5354,7 @@ class ha extends ft {
             socials: !0,
             images: !0,
             in: {fromBottom: !0}
-        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),this.addComponents(".globe-step-0", dd), this.addComponents(".globe-step-1", na),this.addComponents(".globe-step-11", kk), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".section-stats", ca), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
+        }, this.splitTexts = new sa(this.el), this.animatedParts = this.getAll("[data-animate]"),this.addComponents(".globe-step-0", dd), this.addComponents(".globe-step-1", na),this.addComponents(".globe-step-11", kk), this.addComponents(".globe-switch", ra), this.addComponents(".globe-text-2", oa), this.addComponents(".globe-text-3", aa), this.addComponents(".section-photos", la), this.addComponents(".newsroom-footer-wrapper", ua), await oe(200), this.animateIn()
     }
 
     addComponents(e, t, i = this.el, s = !1) {
